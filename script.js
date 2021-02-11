@@ -13,7 +13,7 @@ let gameActive = true;
 let currentPlayer = 'x';
 const winDrawMessage = document.querySelector('[data-win-draw]');
 const squares = document.querySelectorAll('[data-square]');
-const modalBackground = document.querySelector('[data-modal-bg]');
+const modalBackground = document.querySelector('[data-modal-background]');
 const restartButton = document.querySelector('[data-restart-button]');
 
 restartButton.addEventListener('click', restartGame);
@@ -52,7 +52,7 @@ function winCheck() {
     }
     if(win) {
         gameActive = false;
-        winDrawMessage.innerText = `"${currentPlayer}" won!`; 
+        winDrawMessage.innerText = `"${currentPlayer.toUpperCase()}" Won!`; 
         modalBackground.classList.add('bg-active');
         return;
     }
