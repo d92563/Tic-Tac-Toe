@@ -13,6 +13,10 @@ let gameActive = true;
 let currentPlayer = 'x';
 const winDrawMessage = document.querySelector('[data-win-draw]');
 const squares = document.querySelectorAll('[data-square]');
+const modalBackground = document.querySelector('[data-modal-bg]');
+const restartButton = document.querySelector('[data-restart-button]');
+
+restartButton.addEventListener('click', restartGame);
 
 squares.forEach(square => {
     square.addEventListener('click', playTurn, {once: true})
@@ -33,10 +37,6 @@ function placeMarker(square, squareIndex) {
     square.innerText = currentPlayer;
 }
 
-function switchTurns() {
-    currentPlayer = currentPlayer === 'x' ? 'o' : 'x';
-}
-
 function winCheck() {
     let win = false;
     for (let i = 0; i < 8; i++) {
@@ -52,12 +52,24 @@ function winCheck() {
     }
     if(win) {
         gameActive = false;
-        winDrawMessage.innerText = `${currentPlayer} won!`; 
+        winDrawMessage.innerText = `"${currentPlayer}" won!`; 
+        modalBackground.classList.add('bg-active');
         return;
     }
     let draw = !gameState.includes("");
     if (draw) {
-        winDrawMessage.innerText = 'Draw!';   
+        winDrawMessage.innerText = 'Draw!';
+        modalBackground.classList.add('bg-active');   
     }
+}
+
+
+function switchTurns() {
+    currentPlayer = currentPlayer === 'x' ? 'o' : 'x';
+}
+
+
+function restartGame() {
+    window.location.reload();
 }
 
