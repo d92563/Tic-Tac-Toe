@@ -62,9 +62,9 @@ body {
   }
 
   .modal {
-    margin-bottom: 200px;
-    position: relative;
-    height: 6em;
+    position: absolute;
+    top: 50%;
+    height: 10em;
     width: 15em;
     display: flex;
     flex-direction: column;
