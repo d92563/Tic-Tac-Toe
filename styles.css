@@ -64,7 +64,7 @@ body {
   .modal {
     margin-bottom: 200px;
     position: relative;
-    height: 15em;
+    height: 6em;
     width: 15em;
     display: flex;
     flex-direction: column;
