@@ -63,7 +63,7 @@ body {
 
   .modal {
     position: absolute;
-    top: 50%;
+    top: 70%;
     height: 6em;
     width: 15em;
     display: flex;
